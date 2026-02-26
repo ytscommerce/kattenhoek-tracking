@@ -3,12 +3,12 @@ export default async function handler(req, res) {
     const store = process.env.SHOPIFY_STORE;
     const token = process.env.SHOPIFY_ADMIN_TOKEN;
 
-    const response = await fetch(`https://${store}/admin/api/2024-01/orders.json?limit=1`, {
-      headers: {
-        "X-Shopify-Access-Token": token,
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(`https://${store}/admin/api/2023-10/shop.json`, {
+  headers: {
+    "X-Shopify-Access-Token": token,
+    "Content-Type": "application/json",
+  },
+});
 
     const data = await response.json();
 

@@ -13,9 +13,8 @@ export default async function handler(req, res) {
     const data = await response.json();
 
     res.status(200).json({
-      success: true,
-      orders_count: data.orders.length,
-      sample_order: data.orders[0] || null,
+      status: response.status,
+      raw_response: data
     });
 
   } catch (error) {
